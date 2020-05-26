@@ -1,0 +1,30 @@
+%% Illustration
+
+%% Define the framework
+figure(1)
+
+subplot(3,3,1)
+plot(ma.m_d)
+axis([5 50 100 220])
+
+subplot(3,3,2)
+plot(ma.pi_spvA)
+axis([5 50 -0.1 0.1])
+
+subplot(3,3,3)
+plot(MC.bankrupt_banks)
+
+subplot(3,3,4)
+plot(ma.l_c)
+axis([5 50 100 220])
+
+subplot(3,3,5)
+
+
+subplot(3,3,6)
+
+subplot(3,3,7)
+
+subplot(3,3,8)
+
+subplot(3,3,9)

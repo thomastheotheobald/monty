@@ -1,0 +1,12 @@
+% Define all securitized and all credit in the economy
+t_l_spvA = zeros(110,1);
+t_l = zeros(110,1);
+
+% Sum up from model variables
+for i = 1:110
+t_l_spvA(i,1) = sum(mi.l_i_spvA(i,:));
+t_l(i,1) = sum(mi.l_i(i,:));
+end
+
+% Calculate securitization intensity of the economy
+t_sec_i = t_l_spvA ./ t_l;

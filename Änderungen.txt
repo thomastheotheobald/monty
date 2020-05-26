@@ -1,0 +1,22 @@
+interaction (ab Zeile 240)
+
+
+parameter(ab Zeile 5)
+ER_T            = 0.05;                % Thresholdt equity ratio
+LR_T            = 0.09;                % Threshold leverage ratio
+ 
+% Date of securitization
+t_spv           = 10; %5
+
+%% Concerning initialisation
+par.theta_spvA  = 0.95;                 % Scaling parameter SPVA-return           
+par.theta_c     = 0.34;                 % Determines initial endowment of firm's equities
+par.theta_b     = 0.065;                % Determines initial endowment of bank's equities
+par.theta_r     = 0.8;                  % weight of the mark-up in the loan rate
+
+bankSec (ab Zeile 38)
+ mi.p_ek(t,:)  =   mi.p_ek(t-1,:).*(1+ ((sum(mi.l_s_ik(t,:)) ...
+     - sum(mi.l_s_ik(t-1,:)))./sum(mi.l_s_ik(t-1,:))) + normrnd(0,0.075));
+
+bankSec_SPV (ab Zeile 40)
+mi.p_ek(t,:) = mi.p_ek(t-1,:) + mi.p_ek(t-1,:).*(mi.p_ek(t-1,:) - mi.p_ek(t-2,:)) ./ mi.p_ek(t-2,:);
